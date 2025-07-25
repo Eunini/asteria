@@ -60,7 +60,7 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <main className="relative">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative min-h-[calc(100vh-4rem)]">
           {/* Hero background image */}
           <Image
             src="/bg-image.jpg"
