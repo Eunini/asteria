@@ -34,7 +34,7 @@ export default function SignUpPage() {
   const passwordsMatch = formData.password && formData.confirmPassword && formData.password === formData.confirmPassword
 
   return (
-    <div className="min-h-screen bg-[#f5f3f0]">
+    <div className="min-h-screen bg-[#EEECE0]">
       {/* Header */}
       <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
