@@ -60,18 +60,20 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <main className="relative">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative min-h-[calc(100vh-4rem)]">
+        <div className="mx-auto max-w-7xl relative min-h-[calc(100vh-4rem)]">
           {/* Hero background image */}
           <Image
             src="/bg-image.jpg"
             alt="Renewal Serum with jade roller and skincare products"
             fill
-            className="absolute inset-0 w-full h-full object-cover rounded-lg -z-10"
+            className="absolute inset-0 w-full h-full object-cover -z-10"
             priority
           />
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-4rem)] relative z-10">
-            {/* Left side - Content */}
-            <div className="order-1 lg:order-1 space-y-8 py-12 px-4 sm:px-20 lg:py-24">
+            {/* First column empty */}
+            <div className="hidden lg:block"></div>
+            {/* Second column - Content aligned left */}
+            <div className="flex flex-col items-start w-full space-y-8 py-12 lg:py-24 h-full">
               <div className="space-y-6">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-tight">
                   Renewal Serum
@@ -89,8 +91,7 @@ export default function HomePage() {
                 </Button>
               </div>
             </div>
-            {/* Right side - Empty for layout balance */}
-            <div className="order-2 lg:order-2"></div>
+    
           </div>
         </div>
       </main>
