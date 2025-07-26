@@ -7,7 +7,7 @@ import Image from "next/image"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#EEECE0]">
+    <div className="min-h-screen">
       {/* Header */}
       <header className="border-b border-gray-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -71,7 +71,7 @@ export default function HomePage() {
           />
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-4rem)] relative z-10">
             {/* Left side - Content */}
-            <div className="order-1 lg:order-1 space-y-8 py-12 lg:py-24">
+            <div className="order-1 lg:order-1 space-y-8 py-12 px-4 sm:px-20 lg:py-24">
               <div className="space-y-6">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-900 leading-tight">
                   Renewal Serum
