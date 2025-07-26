@@ -4,8 +4,9 @@ import type React from "react"
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Globe, ShoppingBag, ChevronLeft } from "lucide-react"
+import { ChevronLeft } from "lucide-react"
 import { useState } from "react"
+import { Navigation } from "@/components/navigation"
 
 export default function PasswordRecoveryCodePage() {
   const [code, setCode] = useState(["", "", "", "", "", ""])
@@ -45,107 +46,69 @@ export default function PasswordRecoveryCodePage() {
   const isCodeComplete = code.every((digit) => digit !== "")
 
   return (
-    <div className="min-h-screen bg-[#EEECE0]">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="border-b border-gray-200 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            {/* Left Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <Link href="#" className="text-sm font-medium text-gray-900 hover:text-gray-700">
-                Brands
-              </Link>
-              <Link href="#" className="text-sm font-medium text-gray-900 hover:text-gray-700">
-                Catalog
-              </Link>
-              <Link href="#" className="text-sm font-medium text-gray-900 hover:text-gray-700">
-                SofiaMedical
-              </Link>
-              <Link href="#" className="text-sm font-medium text-gray-900 hover:text-gray-700">
-                About
-              </Link>
-            </nav>
-
-            {/* Logo */}
-            <div className="flex-1 flex justify-center md:flex-none">
-              <Link href="/" className="text-2xl font-light tracking-[0.2em] text-gray-900">
-                ASTERIA
-              </Link>
-            </div>
-
-            {/* Right Navigation */}
-            <div className="flex items-center space-x-6">
-              <div className="hidden md:flex items-center space-x-1">
-                <Globe className="h-4 w-4 text-gray-600" />
-                <span className="text-sm font-medium text-gray-900">UK</span>
-              </div>
-              <Link href="#" className="hidden md:block text-sm font-medium text-gray-900 hover:text-gray-700">
-                Partners
-              </Link>
-              <Link href="#" className="hidden md:block text-sm font-medium text-gray-900 hover:text-gray-700">
-                Account
-              </Link>
-              <Link href="#" className="hidden md:block text-sm font-medium text-gray-900 hover:text-gray-700">
-                Contact
-              </Link>
-              <div className="relative">
-                <Link href="#" className="text-gray-900 hover:text-gray-700">
-                  <ShoppingBag className="h-5 w-5" />
-                </Link>
-                <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  1
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Navigation />
 
       {/* SMS Code Verification Form */}
-      <main className="flex items-center justify-center min-h-[calc(100vh-4rem)] py-12">
-        <div className="w-full max-w-md">
-          <div className="bg-[#e8e4df] rounded-lg p-8 shadow-sm">
+      <main className="flex items-center justify-center min-h-[calc(100vh-4rem)] py-8 sm:py-12">
+        <div className="w-full max-w-sm sm:max-w-3xl px-8">
+          <div className="bg-[#EEECE0] p-8 sm:p-12 shadow-sm">
             {/* Header with back button */}
-            <div className="flex items-center mb-12">
-              <Link href="/signin" className="mr-4 p-1 hover:bg-gray-200 rounded transition-colors">
-                <ChevronLeft className="h-5 w-5 text-gray-600" />
+            <div className="flex items-center gap-2 sm:gap-4 mb-8 sm:mb-12">
+              <Link href="/signin" className="hover:bg-gray-200 transition-colors rounded p-1">
+                <ChevronLeft className="h-5 w-5 text-black" />
               </Link>
-              <h1 className="text-xl font-light text-gray-900 flex-1 text-center mr-9">PASSWORD RECOVERY</h1>
+              <h1
+                className="uppercase flex-1 text-center"
+                style={{
+                  fontFamily: 'PF Regal Text Pro',
+                  fontSize: 36,
+                  fontStyle: 'normal',
+                  fontWeight: 300,
+                  lineHeight: '120%'
+                }}
+              >
+                PASSWORD RECOVERY
+              </h1>
             </div>
+            <div className="h-6 sm:h-10" />
 
-            <div className="space-y-8">
+            <div className="space-y-2">
               <div className="text-center">
-                <p className="text-sm text-gray-700 mb-12 leading-relaxed">
+                <p className="text-md text-black mb-3 sm:mb-6 leading-relaxed px-2 text-center">
                   An SMS code to reset your password will be your phone number.
                 </p>
 
                 {/* SMS Code Input */}
-                <div className="flex justify-center space-x-3 mb-12">
-                  {code.map((digit, index) => (
-                    <input
-                      key={index}
-                      id={`code-${index}`}
-                      type="text"
-                      inputMode="numeric"
-                      maxLength={1}
-                      value={digit}
-                      onChange={(e) => handleCodeChange(index, e.target.value)}
-                      onKeyDown={(e) => handleKeyDown(index, e)}
-                      onPaste={index === 0 ? handlePaste : undefined}
-                      className="w-12 h-12 text-center text-lg font-medium bg-white border border-gray-300 rounded focus:border-gray-900 focus:ring-1 focus:ring-gray-900 focus:outline-none transition-colors"
-                      placeholder="0"
-                    />
-                  ))}
-                </div>
+                <form className="space-y-6">
+                  <div className="flex justify-center space-x-3 mb-6">
+                    {code.map((digit, index) => (
+                      <input
+                        key={index}
+                        id={`code-${index}`}
+                        type="text"
+                        inputMode="numeric"
+                        maxLength={1}
+                        value={digit}
+                        onChange={(e) => handleCodeChange(index, e.target.value)}
+                        onKeyDown={(e) => handleKeyDown(index, e)}
+                        onPaste={index === 0 ? handlePaste : undefined}
+                        className="w-12 h-12 text-center text-lg font-medium bg-white border border-gray-300 rounded focus:border-gray-900 focus:ring-1 focus:ring-gray-900 focus:outline-none transition-colors"
+                        placeholder="0"
+                      />
+                    ))}
+                  </div>
 
-                <Button
-                  disabled={!isCodeComplete}
-                  className="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-md font-medium mb-8 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                >
-                  Confirm password
-                </Button>
+                  <Button
+                    disabled={!isCodeComplete}
+                    className="w-full bg-black text-white py-4 font-medium transition-colors disabled:cursor-not-allowed"
+                  >
+                    Confirm password
+                  </Button>
+                </form>
 
-                <button className="text-sm text-gray-700 hover:text-gray-900 underline transition-colors">
+                <button className="text-sm text-gray-700 hover:text-gray-900 transition-colors mt-4">
                   Resend code?
                 </button>
               </div>
