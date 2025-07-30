@@ -1,0 +1,21 @@
+{
+  "password": "Password",
+  "passwordRepeat": "Password repeat",
+  "passwordPlaceholder": "Enter password",
+  "passwordMustMatch": "The password must match",
+  "confirmPassword": "Confirm password",
+  "createNewPassword": "Create a new password and repeat it.",
+  "passwordRecovery": "PASSWORD RECOVERY",
+  "signIn": "Sign In",
+  "logIn": "Log in",
+  "username": "Username",
+  "usernamePlaceholder": "Enter your name",
+  "phoneNumber": "Phone number",
+  "phonePlaceholder": "Enter phone number",
+  "termsAgreement": "I agree to the Terms of Service and Privacy Policy",
+  "forgotPassword": "Forgot your password?",
+  "numberPhone": "Number phone",
+  "enterPhone": "Enter phone",
+  "smsCodeMessage": "An SMS code to reset your password will be your phone number.",
+  "resendCode": "Resend code?"
+}

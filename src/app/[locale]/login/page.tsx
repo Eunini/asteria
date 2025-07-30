@@ -1,72 +1,82 @@
 "use client"
 
-import Link from "next/link"
+import { Link } from "@/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Navigation } from "@/components/navigation"
+import { ChevronLeft } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export default function SignInPage() {
+  const t = useTranslations();
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
       <Navigation />
 
       {/* Sign In Form */}
-      <main className="flex items-center justify-center min-h-[calc(100vh-4rem)] py-4 sm:py-8">
-        <div className="w-full max-w-sm sm:max-w-3xl px-8">
-          <div className="bg-[#EEECE0] p-8 sm:p-12 shadow-sm">
-            <div className="text-center mb-6 sm:mb-8">
-              <h1
-                className="mb-4 sm:mb-6 uppercase"
-                style={{
-                  fontFamily: 'PF Regal Text Pro',
-                  fontSize: 36,
-                  fontStyle: 'normal',
-                  fontWeight: 300,
-                  lineHeight: '120%'
-                }}
-              >
-                LOG IN
-              </h1>
+      <main className="flex items-center justify-center h-full sm:min-h-[calc(100vh-4rem)] sm:py-12">
+        <div className="w-full sm:max-w-3xl sm:px-8">
+          <div className="bg-[#EEECE0] sm:p-12 sm:pb-8 pb-6 p-3">
+            {/* header with bck button */}
+            <div className="flex items-center mb-8 sm:mb-12">
+                <button
+                  onClick={() => window.history.back()}
+                  className="mr-3 sm:mr-4 p-1 hover:bg-gray-200 rounded transition-colors"
+                >
+                  <ChevronLeft className="h-5 w-5 text-black" />
+                </button>
+                <h1
+                  className="uppercase flex-1 text-center text-[24px] sm:text-[36px]"
+                  style={{
+                    fontFamily: 'PF Regal Text Pro',
+                    fontSize: 36,
+                    fontStyle: 'normal',
+                    fontWeight: 300,
+                    lineHeight: '120%'
+                  }}
+                >
+                  {t('logIn')}
+                </h1>
+            </div>
 
               {/* Tabs */}
               <div className="flex border-b border-gray-300">
                 
                 <button className="flex-1 pb-3 text-sm font-medium text-gray-900 border-b-2 border-gray-900">
-                  Login
+                  {t('logIn')}
                 </button>
                 <Link
-                  href="/signin"
+                  href="/"
                   className="flex-1 pb-3 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
                 >
-                  Sign In
+                  {t('signIn')}
                 </Link>
               </div>
-            </div>
 
-            <form className="space-y-3">
-              <div>
+            <form className="sm:space-y-6 space-y-3">
+              <div className="text-left">
                 <Label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-2">
-                  Number phone <span className="text-red-500">*</span>
+                  {t('numberPhone')} <span className="text-red-500">*</span>
                 </Label>
                 <Input
                   id="phone"
                   type="tel"
-                  placeholder="Enter phone"
+                  placeholder={t('enterPhone')}
                   className="w-full bg-white border-gray-300 focus:border-gray-900 focus:ring-gray-900 transition-colors"
                 />
               </div>
 
               <div>
                 <Label htmlFor="password" className="block text-sm font-medium text-gray-900 mb-2">
-                  Password <span className="text-red-500">*</span>
+                  {t('password')} <span className="text-red-500">*</span>
                 </Label>
                 <Input
                   id="password"
                   type="password"
-                  placeholder="Enter password"
+                  placeholder={t('passwordPlaceholder')}
                   className="w-full bg-white border-gray-300 focus:border-gray-900 focus:ring-gray-900 transition-colors"
                 />
               </div>
@@ -74,25 +84,25 @@ export default function SignInPage() {
               <div className="flex items-center space-x-2 py-3">
                 <Checkbox id="terms" />
                 <Label htmlFor="terms" className="text-sm text-gray-900">
-                  I agree to the Terms of Service
+                  {t('termsAgreement')}
                 </Label>
               </div>
 
               <div className="flex justify-center">
                 <Button
                   type="submit"
-                  className="w-75 bg-black text-white py-4 font-medium transition-colors disabled:cursor-not-allowed"
+                  className="w-full sm:w-75 bg-black text-white py-4 font-medium transition-colors disabled:cursor-not-allowed mt-8"
                 >
-                  Sign In
+                  {t('signIn')}
                 </Button>
               </div>
 
-              <div className="text-center pt-2">
+              <div className="flex justify-center">
                 <Link
                   href="/password-recovery/phone"
-                  className="text-sm text-black hover:text-gray-900 transition-colors"
+                  className="text-sm text-black text-center mt-4"
                 >
-                  Forgot your password?
+                  {t('forgotPassword')}
                 </Link>
               </div>
             </form>
@@ -100,5 +110,5 @@ export default function SignInPage() {
         </div>
       </main>
     </div>
-  )
+  );
 }

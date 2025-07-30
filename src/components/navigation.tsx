@@ -1,7 +1,8 @@
-import Link from "next/link"
-import { Globe, ShoppingBag, Menu } from "lucide-react"
+import { Link } from "@/navigation"
+import { ShoppingBag, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { LanguageSwitcher } from "./language-switcher"
 
 export function Navigation() {
   return (
@@ -31,8 +32,7 @@ export function Navigation() {
                 </Link>
                 <div className="pt-4 border-t">
                   <div className="flex items-center space-x-2 mb-4">
-                    <Globe className="h-4 w-4 text-gray-600" />
-                    <span className="text-sm font-medium text-gray-900">UK</span>
+                    <LanguageSwitcher />
                   </div>
                   <Link href="#" className="block text-lg font-medium text-gray-900 hover:text-gray-700 mb-4">
                     Partners
@@ -77,8 +77,7 @@ export function Navigation() {
           {/* Right Navigation */}
           <div className="flex items-center space-x-4 md:space-x-6">
             <div className="hidden md:flex items-center space-x-1">
-              <Globe className="h-4 w-4 text-gray-600" />
-              <span className="text-sm font-medium text-gray-900">UK</span>
+              <LanguageSwitcher />
             </div>
             <Link
               href="#"

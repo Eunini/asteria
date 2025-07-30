@@ -1,0 +1,21 @@
+{
+  "password": "Пароль",
+  "passwordRepeat": "Повторіть пароль",
+  "passwordPlaceholder": "Введіть пароль",
+  "passwordMustMatch": "Паролі повинні співпадати",
+  "confirmPassword": "Підтвердити пароль",
+  "createNewPassword": "Створіть новий пароль і повторіть його.",
+  "passwordRecovery": "ВІДНОВЛЕННЯ ПАРОЛЯ",
+  "signIn": "Увійти",
+  "logIn": "Авторизуватися",
+  "username": "Ім'я користувача",
+  "usernamePlaceholder": "Введіть ваше ім'я",
+  "phoneNumber": "Номер телефону",
+  "phonePlaceholder": "Введіть номер телефону",
+  "termsAgreement": "Я погоджуюся з Умовами надання послуг та Політикою конфіденційності",
+  "forgotPassword": "Забули пароль?",
+  "numberPhone": "Номер телефону",
+  "enterPhone": "Введіть телефон",
+  "smsCodeMessage": "SMS-код для скидання пароля буде надіслано на ваш номер телефону.",
+  "resendCode": "Надіслати код ще раз?"
+}

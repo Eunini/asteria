@@ -1,0 +1,21 @@
+{
+  "password": "Passwort",
+  "passwordRepeat": "Passwort wiederholen",
+  "passwordPlaceholder": "Passwort eingeben",
+  "passwordMustMatch": "Die Passwörter müssen übereinstimmen",
+  "confirmPassword": "Passwort bestätigen",
+  "createNewPassword": "Erstellen Sie ein neues Passwort und wiederholen Sie es.",
+  "passwordRecovery": "PASSWORT WIEDERHERSTELLUNG",
+  "signIn": "Anmelden",
+  "logIn": "Einloggen",
+  "username": "Benutzername",
+  "usernamePlaceholder": "Geben Sie Ihren Namen ein",
+  "phoneNumber": "Telefonnummer",
+  "phonePlaceholder": "Telefonnummer eingeben",
+  "termsAgreement": "Ich stimme den Nutzungsbedingungen und der Datenschutzrichtlinie zu",
+  "forgotPassword": "Passwort vergessen?",
+  "numberPhone": "Telefonnummer",
+  "enterPhone": "Telefon eingeben",
+  "smsCodeMessage": "Ein SMS-Code zum Zurücksetzen Ihres Passworts wird Ihre Telefonnummer sein.",
+  "resendCode": "Code erneut senden?"
+}
